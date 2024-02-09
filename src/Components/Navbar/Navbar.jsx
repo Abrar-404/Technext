@@ -1,29 +1,50 @@
-import { Navbtn } from './Navbtn';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import '../Styles/hamburger.css';
 
 const Navbar = () => {
   return (
     <div className="z-50 sticky top-0 backdrop-blur">
       <div className="navbar ">
         <div className="navbar-start">
-          <div className="dropdown">
-            <Navbtn></Navbtn>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <Link to="/">
+          <div className="drawer">
+            <input
+              id="my-drawer"
+              type="checkbox"
+              className="drawer-toggle inpi"
+            />
+            <div className="drawer-content">
+              <label htmlFor="my-drawer" className=" drawer-button">
+                <div>
+                  <label htmlFor="my-drawer" class="hamburger drawer-button">
+                    <input type="checkbox" className="inpi" />
+                    <svg className="sveg" viewBox="0 0 32 32">
+                      <path
+                        class="line line-top-bottom"
+                        d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+                      ></path>
+                      <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                  </label>
+                </div>
+              </label>
+            </div>
+            <div className="drawer-side">
+              <label
+                htmlFor="my-drawer"
+                aria-label="close sidebar"
+                className="drawer-overlay"
+              ></label>
+              <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                <NavLink>
+                  <li>
+                    <a>Homepage</a>
+                  </li>
+                </NavLink>
                 <li>
-                  <a>Homepage</a>
+                  <a>Sidebar Item 2</a>
                 </li>
-              </Link>
-              <li>
-                <a>Portfolio</a>
-              </li>
-              <li>
-                <a>About</a>
-              </li>
-            </ul>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="navbar-center">
