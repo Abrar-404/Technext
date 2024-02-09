@@ -1,7 +1,7 @@
 import '../../Styles/card.css';
 
 const UsersCard = ({ usersInfo }) => {
-  const { firstName, lastName, email, address } = usersInfo || {};
+  const { firstName, lastName, email, address, company } = usersInfo || {};
   return (
     <div>
       <div class="card">
@@ -9,6 +9,7 @@ const UsersCard = ({ usersInfo }) => {
         <div class="card-title">
           {firstName} {lastName}
         </div>
+        <div class="card-title2 mt-2">Company : {company?.name}</div>
         <h1 class="sub">{email}</h1>
         <h1 class="sub mt-1">Street : {address?.address}</h1>
         <h1 class="sub mt-1">City : {address?.city}</h1>
