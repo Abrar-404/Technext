@@ -1,94 +1,45 @@
-import { motion, useTransform, useScroll } from 'framer-motion';
-import { useRef } from 'react';
-
 const Banner = () => {
   return (
-    <div className="lg:ml-[400px] md:ml-[200px] ml-[100px]">
-      <HorizontalScrollCarousel />
+    <div>
+      <CutoutTextLoader
+        height="450px"
+        background="#2B3440"
+        // NOTE: Using GIFs for the background looks super cool :)
+        imgUrl="https://i.ibb.co/4dzVsxL/giphy.gif"
+      />
     </div>
   );
 };
 
-const HorizontalScrollCarousel = () => {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ['1%', '-95%']);
-
+const CutoutTextLoader = ({ height, background, imgUrl }) => {
   return (
-    <section ref={targetRef} className="relative h-[300vh] ">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-4">
-          {cards.map(card => {
-            return <Card card={card} key={card.id} />;
-          })}
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
-const Card = ({ card }) => {
-  return (
-    <div
-      key={card.id}
-      className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200"
-    >
+    <div className="relative" style={{ height }}>
       <div
+        className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(${card.url})`,
-          backgroundSize: 'cover',
+          backgroundImage: `url(${imgUrl})`,
           backgroundPosition: 'center',
+          backgroundSize: 'cover',
         }}
-        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
-      ></div>
-      <div className="absolute inset-0 z-10 grid place-content-center">
-        <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-black backdrop-blur-lg">
-          {card.title}
-        </p>
-      </div>
+      />
+      <div
+        style={{ background }}
+        className="absolute inset-0 animate-pulse z-10"
+      />
+      <span
+        className="font-black absolute inset-0 z-20 text-center bg-clip-text text-transparent pointer-events-none"
+        style={{
+          backgroundImage: `url(${imgUrl})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          fontSize: 'clamp(3rem, 12vw, 10rem)',
+          lineHeight: height,
+        }}
+      >
+        USIFY
+      </span>
     </div>
   );
 };
 
 export default Banner;
-
-const cards = [
-  {
-    url: '/imgs/abstract/1.jpg',
-    title: 'Title 1',
-    id: 1,
-  },
-  {
-    url: '/imgs/abstract/2.jpg',
-    title: 'Title 2',
-    id: 2,
-  },
-  {
-    url: '/imgs/abstract/3.jpg',
-    title: 'Title 3',
-    id: 3,
-  },
-  {
-    url: '/imgs/abstract/4.jpg',
-    title: 'Title 4',
-    id: 4,
-  },
-  {
-    url: '/imgs/abstract/5.jpg',
-    title: 'Title 5',
-    id: 5,
-  },
-  {
-    url: '/imgs/abstract/6.jpg',
-    title: 'Title 6',
-    id: 6,
-  },
-  {
-    url: '/imgs/abstract/7.jpg',
-    title: 'Title 7',
-    id: 7,
-  },
-];
