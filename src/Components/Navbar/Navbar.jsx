@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import '../Styles/hamburger.css';
 import { FaHome, FaUser } from 'react-icons/fa';
 import { IoMdPersonAdd } from 'react-icons/io';
+import { LiaUsersSolid } from 'react-icons/lia';
 import '../Styles/spinner.css';
 import {
   Link,
@@ -70,11 +71,19 @@ const Navbar = () => {
                     </a>
                   </li>
                 </Link>
-                <Link to="existingUser" spy={true} smooth={true} offset={70}>
+                <Link to="addUsers" spy={true} smooth={true} offset={70}>
                   <li>
                     <a>
                       {' '}
                       <IoMdPersonAdd /> Add New Users
+                    </a>
+                  </li>
+                </Link>
+                <Link to="newAddedUsers" spy={true} smooth={true} offset={70}>
+                  <li>
+                    <a>
+                      {' '}
+                      <LiaUsersSolid /> New Users
                     </a>
                   </li>
                 </Link>

@@ -48,7 +48,7 @@ const NewUserCard = ({ userNew }) => {
   };
 
   return (
-    <div>
+    <div id="">
       <div data-aos="fade-up" data-aos-duration="2000">
         <div class="card2">
           <div class="card2-photo"></div>
