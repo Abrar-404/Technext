@@ -1,7 +1,7 @@
 import '../../Styles/card.css';
 
 const UsersCard = ({ usersInfo }) => {
-  const { firstName, lastName } = usersInfo || {};
+  const { firstName, lastName, email, address } = usersInfo || {};
   return (
     <div>
       <div class="card">
@@ -9,7 +9,10 @@ const UsersCard = ({ usersInfo }) => {
         <div class="card-title">
           {firstName} {lastName}
         </div>
-        <h1 class="sub">Fullstack dev &amp; UX UI</h1>
+        <h1 class="sub">{email}</h1>
+        <h1 class="sub mt-1">Street : {address?.address}</h1>
+        <h1 class="sub mt-1">City : {address?.city}</h1>
+        <h1 class="sub mt-1">Suite : {address?.postalCode}</h1>
         <div class="card-socials">
           <button class="card-socials-btn facebook">
             <svg

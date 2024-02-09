@@ -6,7 +6,7 @@
   --bg-color: #111;
   --main-color: #fefefe;
   /* width: 200px; */
-  height: 254px;
+  /* height: 254px; */
   background: var(--bg-color);
   border: 2px solid var(--main-color);
   box-shadow: 4px 4px var(--main-color);
