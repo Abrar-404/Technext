@@ -2,8 +2,8 @@ import { Navbtn } from './Navbtn';
 
 const Navbar = () => {
   return (
-    <div className="">
-      <div className="navbar z-50 sticky top-0 backdrop-blur">
+    <div className="z-50 sticky top-0 backdrop-blur">
+      <div className="navbar ">
         <div className="navbar-start">
           <div className="dropdown">
             <Navbtn></Navbtn>

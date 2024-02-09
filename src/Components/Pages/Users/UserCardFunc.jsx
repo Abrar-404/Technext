@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import UsersCard from './UsersCard';
 
 const UserCardFunc = () => {
   const [usersFunc, setUsersFunc] = useState([]);
@@ -11,17 +12,11 @@ const UserCardFunc = () => {
 
   return (
     <div>
-      {/* Map through the 'usersFunc' array */}
-      {usersFunc?.map(user => (
-        <div key={user.id}>
-          <h1>
-            {user.firstName} {user.lastName}
-          </h1>
-          <p>Email: {user.email}</p>
-          <p>Phone: {user.phone}</p>
-          {/* Add more details as needed */}
-        </div>
-      ))}
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto gap-5 mt-32'>
+        {usersFunc?.map(userInfo => (
+          <UsersCard key={userInfo?.id} usersInfo={userInfo}></UsersCard>
+        ))}
+      </div>
     </div>
   );
 };
