@@ -5,6 +5,7 @@ import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainLayout from './Components/Layout/MainLayout';
 import Home from './Components/Pages/Home/Home';
+import UsersDetails from './Components/Pages/UsersDetails/UsersDetails';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
+      },
+      {
+        path: '/userDetails/:id',
+        element: <UsersDetails></UsersDetails>,
+        loader: ({ params }) =>
+          fetch(`https://dummyjson.com/users/${params.id}`),
+        // loader: ({ params }) =>
+        //   fetch(`https://dummyjson.com/users/${params.id}`),
       },
     ],
   },

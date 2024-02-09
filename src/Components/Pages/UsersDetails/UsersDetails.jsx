@@ -1,22 +1,22 @@
-import '../../Styles/card.css';
-import { Link } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
-const UsersCard = ({ usersInfo }) => {
-  const { firstName, lastName, email, address, company, id } = usersInfo || {};
+const UsersDetails = () => {
+  const userDetail = useLoaderData();
+
+  const { firstName } = userDetail || {};
+
   return (
     <div>
       <div class="card">
         <div class="card-photo"></div>
-        <Link to={`/userDetails/${id}`}>
-          <div class="card-title">
-            {firstName} {lastName}
-          </div>
-        </Link>
-        <div class="card-title2 mt-2">Company : {company?.name}</div>
-        <h1 class="sub">{email}</h1>
-        <h1 class="sub mt-1">Street : {address?.address}</h1>
-        <h1 class="sub mt-1">City : {address?.city}</h1>
-        <h1 class="sub mt-1">Suite : {address?.postalCode}</h1>
+
+        <div class="card-title">name : {firstName}</div>
+
+        <div class="card-title2 mt-2">Company : </div>
+        <h1 class="sub">email</h1>
+        <h1 class="sub mt-1">Street : </h1>
+        <h1 class="sub mt-1">City : </h1>
+        <h1 class="sub mt-1">Suite : </h1>
         <div class="card-socials">
           <button class="card-socials-btn facebook">
             <svg
@@ -58,4 +58,4 @@ const UsersCard = ({ usersInfo }) => {
   );
 };
 
-export default UsersCard;
+export default UsersDetails;
