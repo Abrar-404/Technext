@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import '../Styles/hamburger.css';
+import { FaHome, FaUser } from 'react-icons/fa';
+import '../Styles/spinner.css'
 
 const Navbar = () => {
   return (
@@ -32,16 +34,30 @@ const Navbar = () => {
               <label
                 htmlFor="my-drawer"
                 aria-label="close sidebar"
-                className="drawer-overlay"
+                className="drawer-overlay backdrop-blur"
               ></label>
-              <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+
+              <ul className="menu p-4 w-80 min-h-full backdrop-blur bg-black opacity-80 button text-base-content">
+                <div>
+                  <div class="loader mt-10">
+                    <div class="dot-one"></div>
+                    <div class="dot-two">- -</div>
+                    <div class="dot-three"></div>
+                  </div>
+                </div>
                 <NavLink>
                   <li>
-                    <a>Homepage</a>
+                    <a>
+                      {' '}
+                      <FaHome></FaHome> Homepage
+                    </a>
                   </li>
                 </NavLink>
                 <li>
-                  <a>Sidebar Item 2</a>
+                  <a>
+                    {' '}
+                    <FaUser></FaUser> Existing Users
+                  </a>
                 </li>
               </ul>
             </div>
