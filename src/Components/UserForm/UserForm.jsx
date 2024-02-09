@@ -68,18 +68,21 @@ const UserForm = () => {
                 className="inpish"
                 name="firstName"
                 placeholder="FirstName"
+                required
               />
               <input
                 type="text"
                 className="inpish"
                 name="lastName"
                 placeholder="LastName"
+                required
               />
               <input
                 type="text"
                 className="inpish"
                 name="email"
                 placeholder="Email"
+                required
               />
             </div>
 
@@ -89,18 +92,21 @@ const UserForm = () => {
                 className="inpish"
                 name="street"
                 placeholder="Street"
+                required
               />
               <input
                 type="text"
                 className="inpish"
                 name="city"
                 placeholder="City"
+                required
               />
               <input
                 type="text"
                 className="inpish"
                 name="suite"
                 placeholder="Suite"
+                required
               />
             </div>
             <div className="flex flex-col md:flex-col lg:flex-row gap-7 mx-auto">
@@ -109,12 +115,14 @@ const UserForm = () => {
                 className="inpish"
                 name="address"
                 placeholder="Address"
+                required
               />
               <input
                 type="text"
                 className="inpish"
                 name="company"
                 placeholder="Company Name"
+                required
               />
             </div>
             <button className="bhitu mt-10">ADD</button>

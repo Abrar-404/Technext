@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import '../Styles/card2.css';
 import '../Styles/deletebtn.css';
@@ -22,7 +23,7 @@ const NewUserCard = ({ userNew }) => {
       text: "You won't be able to revert this!",
       icon: 'warning',
       color: 'white',
-      background: '#121041',
+      background: '#212121',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
@@ -37,6 +38,8 @@ const NewUserCard = ({ userNew }) => {
               title: 'Deleted!',
               text: 'Your file has been deleted.',
               icon: 'success',
+              background: '#212121',
+              color: 'white',
             });
           }
         });
@@ -50,17 +53,19 @@ const NewUserCard = ({ userNew }) => {
         <div class="card2">
           <div class="card2-photo"></div>
 
-          <div class="card2-title">
-            {firstName} {lastName}
-          </div>
+          <Link to={`/users/${_id}`}>
+            <div class="card2-title">
+              {firstName} {lastName}
+            </div>
+          </Link>
 
           <div class="card2-title2 mt-2">Company : {company}</div>
           <h1 class="sub">{email}</h1>
           <h1 class="sub mt-1">Street : {address}</h1>
           <h1 class="sub mt-1">City : {city}</h1>
           <h1 class="sub mt-1">Suite : {suite}</h1>
-          <div class="card2-socials">
-            <button onClick={() => handleDeleteUser(_id)} class="deleteBtn">
+          <div class="card2-socials mb-10">
+            {/* <button onClick={() => handleDeleteUser(_id)} class="deleteBtn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -98,6 +103,12 @@ const NewUserCard = ({ userNew }) => {
                     <rect fill="white" height="57" width="69"></rect>
                   </clipPath>
                 </defs>
+              </svg>
+            </button> */}
+
+            <button onClick={() => handleDeleteUser(_id)} class="delete-button">
+              <svg class="delete-svgIcon" viewBox="0 0 448 512">
+                <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
               </svg>
             </button>
           </div>
