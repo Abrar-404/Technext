@@ -2,6 +2,7 @@ import Banner from '../../Banner/Banner';
 import UserCardFunc from '../Users/UserCardFunc';
 import '../../Styles/text.css';
 import UserForm from '../../UserForm/UserForm';
+import NewUsersFunc from '../../NewUsers/NewUsersFunc';
 
 const Home = () => {
   return (
@@ -17,6 +18,10 @@ const Home = () => {
             Add New Users
           </h1>
           <UserForm></UserForm>
+        </div>
+
+        <div>
+          <NewUsersFunc></NewUsersFunc>
         </div>
       </div>
     </div>

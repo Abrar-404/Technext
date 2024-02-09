@@ -28,15 +28,11 @@ const UserForm = () => {
       company,
     };
 
+    console.log(addData);
+
     axios.post('http://localhost:5000/users', addData).then(res => {
       console.log(res.data);
       if (res.data.insertedId) {
-        // Swal.fire({
-        //   title: `Bingo!`,
-        //   text: ` Product added to the cart.`,
-        //   icon: 'success',
-        // });
-
         const Toast = Swal.mixin({
           toast: true,
           color: 'white',
@@ -123,7 +119,7 @@ const UserForm = () => {
             </div>
             <button className="bhitu mt-10">ADD</button>
           </div>
-          <div className="formish_back">
+          {/* <div className="formish_back">
             <input
               type="text"
               className="inpish"
@@ -172,7 +168,7 @@ const UserForm = () => {
               name="company"
               placeholder="Company Name"
             />
-          </div>
+          </div> */}
         </form>
       </div>
     </div>
