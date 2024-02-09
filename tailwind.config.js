@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Josefin Sans', 'sans-serif'],
+        fancy: ['Yatra One', 'system-ui'],
       },
     },
   },
