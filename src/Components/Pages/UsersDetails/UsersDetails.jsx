@@ -7,11 +7,11 @@ const UsersDetails = () => {
 
   return (
     <div>
-      <div class="card lg:flex-row md:flex-col flex-col justify-center items-center gap-10  py-72 text-center">
+      <div class="card2 lg:flex-row md:flex-col flex-col justify-center items-center gap-10  py-72 text-center">
         <div class="card-photo "></div>
 
         <div>
-          <div class="card-title text-center lg:ml-[150px] md:ml-[30px] ml-[30px]">
+          <div class="card-title text-center flex justify-center">
             {firstName} {lastName}{' '}
           </div>
 
