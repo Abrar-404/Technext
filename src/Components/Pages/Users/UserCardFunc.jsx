@@ -71,7 +71,7 @@ const UserCardFunc = () => {
   };
 
   return (
-    <div>
+    <div id='existingUser'>
       <div className="mt-32">
         <div className="inupi-container mx-auto">
           <input

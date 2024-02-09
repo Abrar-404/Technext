@@ -20,7 +20,7 @@ const UsersCard = ({ usersInfo }) => {
         <h1 class="sub mt-1">Street : {address?.address}</h1>
         <h1 class="sub mt-1">City : {address?.city}</h1>
         <h1 class="sub mt-1">Suite : {address?.postalCode}</h1>
-        <div class="card-socials">
+        <div class="card-socials mb-10">
           <button class="card-socials-btn facebook">
             <svg
               data-name="Layer 21"

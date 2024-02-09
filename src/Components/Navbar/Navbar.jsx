@@ -1,7 +1,16 @@
 import { NavLink } from 'react-router-dom';
 import '../Styles/hamburger.css';
 import { FaHome, FaUser } from 'react-icons/fa';
-import '../Styles/spinner.css'
+import { IoMdPersonAdd } from 'react-icons/io';
+import '../Styles/spinner.css';
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+} from 'react-scroll';
 
 const Navbar = () => {
   return (
@@ -45,7 +54,7 @@ const Navbar = () => {
                     <div class="dot-three"></div>
                   </div>
                 </div>
-                <NavLink>
+                <NavLink to="/">
                   <li>
                     <a>
                       {' '}
@@ -53,12 +62,22 @@ const Navbar = () => {
                     </a>
                   </li>
                 </NavLink>
-                <li>
-                  <a>
-                    {' '}
-                    <FaUser></FaUser> Existing Users
-                  </a>
-                </li>
+                <Link to="existingUser" spy={true} smooth={true} offset={70}>
+                  <li>
+                    <a>
+                      {' '}
+                      <FaUser></FaUser> Existing Users
+                    </a>
+                  </li>
+                </Link>
+                <Link to="existingUser" spy={true} smooth={true} offset={70}>
+                  <li>
+                    <a>
+                      {' '}
+                      <IoMdPersonAdd /> Add New Users
+                    </a>
+                  </li>
+                </Link>
               </ul>
             </div>
           </div>
