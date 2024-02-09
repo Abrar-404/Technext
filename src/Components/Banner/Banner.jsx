@@ -4,8 +4,8 @@ const Banner = () => {
       <CutoutTextLoader
         height="450px"
         background="#2B3440"
-        // NOTE: Using GIFs for the background looks super cool :)
         imgUrl="https://i.ibb.co/4dzVsxL/giphy.gif"
+        // imgUrl="https://i.ibb.co/b5sHtk5/offcie.webp"
       />
     </div>
   );
