@@ -1,12 +1,14 @@
 import '../../Styles/card.css';
 
 const UsersCard = ({ usersInfo }) => {
-  const { firstName } = usersInfo || {};
+  const { firstName, lastName } = usersInfo || {};
   return (
     <div>
       <div class="card">
         <div class="card-photo"></div>
-        <div class="card-title">{firstName}</div>
+        <div class="card-title">
+          {firstName} {lastName}
+        </div>
         <h1 class="sub">Fullstack dev &amp; UX UI</h1>
         <div class="card-socials">
           <button class="card-socials-btn facebook">
