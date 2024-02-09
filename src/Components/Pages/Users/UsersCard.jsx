@@ -1,10 +1,13 @@
 import '../../Styles/card.css';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
 
 const UsersCard = ({ usersInfo }) => {
   const { firstName, lastName, email, address, company, id } = usersInfo || {};
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-duration="2000">
       <div class="card">
         <div class="card-photo"></div>
         <Link to={`/userDetails/${id}`}>
@@ -59,3 +62,5 @@ const UsersCard = ({ usersInfo }) => {
 };
 
 export default UsersCard;
+
+AOS.init();
