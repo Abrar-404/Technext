@@ -238,7 +238,7 @@ const UserCardFunc = () => {
         break;
       case 'company':
         sortedUsers.sort((a, b) =>
-          a.companyName.localeCompare(b.companyName?.name)
+          a.company?.name.localeCompare(b.company?.name)
         );
         break;
       default:
