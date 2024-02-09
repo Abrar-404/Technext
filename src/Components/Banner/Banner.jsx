@@ -5,26 +5,28 @@ import { pointsInner, pointsOuter } from './utils';
 
 const Banner = () => {
   return (
-    <div className="relative">
-      <Canvas
-        camera={{
-          position: [10, -7.5, -5],
-        }}
-        style={{ height: '100vh' }}
-        className="bg-slate-900"
-      >
-        <OrbitControls maxDistance={20} minDistance={10} />
-        <directionalLight />
-        <pointLight position={[-30, 0, -30]} power={10.0} />
-        <PointCircle />
-      </Canvas>
+    <div className='z-5'>
+      <div className="relative">
+        <Canvas
+          camera={{
+            position: [10, -7.5, -5],
+          }}
+          style={{ height: '100vh' }}
+          className="bg-slate-900"
+        >
+          <OrbitControls maxDistance={20} minDistance={10} />
+          <directionalLight />
+          <pointLight position={[-30, 0, -30]} power={10.0} />
+          <PointCircle />
+        </Canvas>
 
-      <h1 className="absolute top-[50%] font-sans left-[50%] -translate-x-[50%] -translate-y-[50%] text-slate-200 font-medium text-7xl md:text-5xl pointer-events-none">
-        U S I F Y <br />{' '}
-        <span className="text-sm text-center flex justify-center">
-          M a n a g e --- E f f i c i e n t l y
-        </span>
-      </h1>
+        <h1 className="absolute top-[50%] font-sans text-center left-[50%] -translate-x-[50%] -translate-y-[50%] text-slate-200 font-medium text-7xl md:text-5xl pointer-events-none">
+          U S I F Y <br />{' '}
+          <span className="text-sm text-center flex justify-center">
+            M a n a g e --- E f f i c i e n t l y
+          </span>
+        </h1>
+      </div>
     </div>
   );
 };

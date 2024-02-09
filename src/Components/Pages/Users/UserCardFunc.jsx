@@ -73,10 +73,11 @@ const UserCardFunc = () => {
   return (
     <div>
       <div className="mt-32">
-        <div className="input-container mx-auto">
+        <div className="inupi-container mx-auto">
           <input
             type="text"
             placeholder="Search Here"
+            className="inupi"
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
           />
@@ -86,8 +87,19 @@ const UserCardFunc = () => {
         </div>
       </div>
 
-      <div className="mt-4 mx-auto flex justify-center">
-        <select value={sortBy} onChange={handleSort}>
+      <div className="mt-10 mx-auto flex justify-center">
+        <select
+          value={sortBy}
+          onChange={handleSort}
+          className="select select-primary w-full max-w-xs inupi"
+          style={{
+            borderRadius: '10px',
+            boxShadow: '0 0 10px rgba(255, 255, 0, 0)',
+          }}
+        >
+          <option disabled value="">
+            Sort By
+          </option>
           <option value="name">Sort by Name</option>
           <option value="email">Sort by Email</option>
           <option value="company">Sort by Company Name</option>

@@ -1,4 +1,4 @@
-.input-container {
+.inupi-container {
   display: flex;
   background: white;
   width: 100%;
@@ -10,7 +10,7 @@
   gap: 0.3rem;
 }
 
-.input-container input {
+.inupi-container .inupi {
   border-radius: 0.8rem 0 0 0.8rem;
   background: #23272f;
   box-shadow: inset 5px 5px 10px #0e1013, inset -5px -5px 10px #383e4b,
@@ -24,7 +24,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.input-container input:focus {
+.inupi-container .inupi:focus {
   border: 1px solid #ffd43b;
   outline: none;
   box-shadow: inset 0px 0px 10px rgba(255, 102, 0, 0.5),
@@ -32,7 +32,7 @@
     0px 0px 100px rgba(255, 212, 59, 0.5), 0px 0px 100px rgba(255, 102, 0, 0.5);
 }
 
-.input-container button {
+.inupi-container .button {
   flex-basis: 25%;
   padding: 1rem;
   background: linear-gradient(
@@ -52,7 +52,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.input-container button:hover {
+.inupi-container .button:hover {
   background: linear-gradient(
     135deg,
     rgb(255, 212, 59) 50%,
@@ -63,22 +63,22 @@
 }
 
 @media (max-width: 768px) {
-  .input-container {
+  .inupi-container {
     flex-direction: column;
     width: 90%;
     max-width: 400px;
     margin: 0 auto;
   }
 
-  .input-container input,
-  .input-container button {
+  .inupi-container .inupi,
+  .inupi-container .button {
     border-radius: 0.8rem;
     flex-basis: auto;
   }
 }
 
 @media (min-width: 1024px) {
-  .input-container {
+  .inupi-container {
     width: 400px;
   }
 }
