@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         path: '/users/:id',
         element: <NewUserDetails></NewUserDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/users/${params.id}`),
+          fetch(`https://server-pi-opal-58.vercel.app/users/${params.id}`),
       },
     ],
   },

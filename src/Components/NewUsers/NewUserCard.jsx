@@ -30,19 +30,21 @@ const NewUserCard = ({ userNew }) => {
       confirmButtonText: 'Yes, delete it!',
     }).then(result => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/users/${_id}`).then(res => {
-          console.log(res.data);
-          if (res.data.deletedCount > 0) {
-            refetch();
-            Swal.fire({
-              title: 'Deleted!',
-              text: 'Your file has been deleted.',
-              icon: 'success',
-              background: '#212121',
-              color: 'white',
-            });
-          }
-        });
+        axios
+          .delete(`https://server-pi-opal-58.vercel.app/users/${_id}`)
+          .then(res => {
+            console.log(res.data);
+            if (res.data.deletedCount > 0) {
+              refetch();
+              Swal.fire({
+                title: 'Deleted!',
+                text: 'Your file has been deleted.',
+                icon: 'success',
+                background: '#212121',
+                color: 'white',
+              });
+            }
+          });
       }
     });
   };

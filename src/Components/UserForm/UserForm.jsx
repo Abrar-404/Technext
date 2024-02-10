@@ -30,29 +30,31 @@ const UserForm = () => {
 
     console.log(addData);
 
-    axios.post('http://localhost:5000/users', addData).then(res => {
-      console.log(res.data);
-      if (res.data.insertedId) {
-        const Toast = Swal.mixin({
-          toast: true,
-          color: 'white',
-          position: 'top-end',
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          didOpen: toast => {
-            toast.onmouseenter = Swal.stopTimer;
-            toast.onmouseleave = Swal.resumeTimer;
-          },
-        });
-        Toast.fire({
-          icon: 'success',
-          background: '#2F333E',
-          color: 'white',
-          title: 'User Added successfully',
-        });
-      }
-    });
+    axios
+      .post('https://server-pi-opal-58.vercel.app/users', addData)
+      .then(res => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          const Toast = Swal.mixin({
+            toast: true,
+            color: 'white',
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: toast => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            },
+          });
+          Toast.fire({
+            icon: 'success',
+            background: '#2F333E',
+            color: 'white',
+            title: 'User Added successfully',
+          });
+        }
+      });
   };
 
   return (

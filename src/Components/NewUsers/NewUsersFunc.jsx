@@ -5,7 +5,7 @@ const NewUsersFunc = () => {
   const [newUser, setNewUser] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/users')
+    fetch('https://server-pi-opal-58.vercel.app/users')
       .then(res => res.json())
       .then(data => setNewUser(data));
   }, [newUser]);
