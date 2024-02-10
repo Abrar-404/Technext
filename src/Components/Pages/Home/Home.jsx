@@ -17,11 +17,13 @@ const Home = () => {
           <h1 className="flex justify-center text-3xl font-fancy text-flicker-in-glow font-bold">
             Add New Users
           </h1>
-          <UserForm></UserForm>
+          <div className="mb-96">
+            <UserForm></UserForm>
+          </div>
         </div>
 
         <div className="mt-96">
-          <h1 className="flex justify-center text-3xl font-fancy text-flicker-in-glow font-bold">
+          <h1 className="flex justify-center text-3xl font-fancy text-flicker-in-glow font-bold pt-32 mt-20">
             New Users
           </h1>
           <NewUsersFunc></NewUsersFunc>
