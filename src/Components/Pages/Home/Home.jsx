@@ -14,10 +14,10 @@ const Home = () => {
         </h1>
         <UserCardFunc></UserCardFunc>
         <div id="" className="mt-96">
-          <h1 className="flex justify-center text-3xl font-fancy text-flicker-in-glow font-bold">
+          <h1 className="flex pb-32 justify-center text-3xl font-fancy text-flicker-in-glow font-bold">
             Add New Users
           </h1>
-          <div className="mb-96">
+          <div className="pb-32">
             <UserForm></UserForm>
           </div>
         </div>

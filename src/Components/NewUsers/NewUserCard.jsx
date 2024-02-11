@@ -1,4 +1,3 @@
-import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -8,14 +7,6 @@ import '../Styles/deletebtn.css';
 const NewUserCard = ({ userNew }) => {
   const { firstName, lastName, company, email, address, city, suite, _id } =
     userNew || {};
-
-  const { data: users = [], refetch } = useQuery({
-    queryKey: ['users'],
-    queryFn: async () => {
-      const res = await axios.get('https://server-pi-opal-58.vercel.app/users');
-      return res.data;
-    },
-  });
 
   const handleDeleteUser = _id => {
     Swal.fire({
@@ -35,7 +26,6 @@ const NewUserCard = ({ userNew }) => {
           .then(res => {
             console.log(res.data);
             if (res.data.deletedCount > 0) {
-              refetch();
               Swal.fire({
                 title: 'Deleted!',
                 text: 'Your file has been deleted.',

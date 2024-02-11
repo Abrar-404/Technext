@@ -59,7 +59,7 @@ const UserForm = () => {
 
   return (
     <div id="addUsers">
-      <div className="conta mt-96 m-auto">
+      <div className="conta mt-96 lg:pb-32 md:pb-32 pb-32 m-auto">
         <input id="signup_toggle" className="inpish" type="checkbox" />
         <form onSubmit={handleSubmit} className="formish">
           <div className="formish_front">
